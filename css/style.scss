@@ -1,0 +1,553 @@
+@import "global"; //общие настройки
+@import "fonts"; //шрифты
+@import "keyframes";//анимации
+
+/*=================================================================================================================
+
+                                                            header
+
+==================================================================================================================*/
+
+.header { 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        padding: 15px 0;
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+    }
+    &__logo-block {
+        display: flex;
+        align-self: center;
+    }
+    &__logo {
+        font-size: 48px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 0 5px 5px #000000;
+    }
+    &__menu-block {
+        display: flex;
+        align-self: center;
+    }
+    &__menu-list {
+        display: flex;
+    }
+    &__menu-item {
+        margin: 0 10px;
+        font-size: 36px;
+        line-height: 20px;
+        transform: scale(1);
+    }
+    &__menu-link {
+        text-shadow: 0 5px 5px #000000;
+        transform: scale(1);
+        display: inline-block;
+    }
+    &__menu-link:hover {
+        animation: scale 0.2s linear forwards;
+    }
+    &__menu-link:active {
+        animation: scale-btn 0.1s linear forwards;
+    }
+}
+
+/*=================================================================================================================
+
+                                                            contacts
+
+==================================================================================================================*/
+
+.contacts {
+    background-color: #619fce;
+    overflow: hidden;
+    &__block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__image-block {
+        max-width: 300px;
+        max-height: 300px;
+        box-shadow: 0 0 40px #000000;
+        border-radius: 50%;
+        animation: departure-right 0.9s linear forwards;
+        position: relative;
+        opacity: 0;
+        margin-right: 135px;
+    }
+    &__image-block::before, &__image-block::after {
+        content: '';
+        border: white 5px dashed;
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        overflow: visible;
+        width: 120%;
+        height:120%;
+        border-radius: 50%;
+        opacity: 0;
+        animation: departure-right 0.9s linear forwards 0.6s, scrolling 8s linear infinite reverse 1.6s;
+    }
+    &__image-block::after {
+        width: 140%;
+        height: 140%;
+        top: -20%;
+        left: -20%;
+        border: #ffffff 7px dotted;
+        animation: departure-right 0.9s linear forwards 0.65s ,scrolling 8s linear infinite 1.7s;
+    }
+    &__image {
+        max-width: 100%;
+        object-fit: initial;
+        border-radius: 50%;
+        object-position: bottom center;
+    }
+    &__information-block {
+        max-width: 55%;
+        animation: departure-left 0.9s linear ;
+    }
+    &__information-item {
+        display: flex;
+        margin-bottom: 20px;
+        text-shadow: 0 5px 5px #000000;
+    }
+    &__information-item:hover {
+        animation: shaking .3s linear;
+    }
+    &__information-title {
+        font-size: 36px;
+        line-height: 30px;
+        margin-right: 20px;
+        text-shadow: 0 5px 5px #000000;
+    }
+    &__information-item:last-child {
+        margin-bottom: 0;
+    }
+    &__information-data {
+        font-size: 30px;
+        text-decoration: none;
+    }
+    &__information-data:hover.link-hover {
+        text-decoration: underline;
+    }
+}
+
+
+
+/*=================================================================================================================
+
+                                                            objective
+
+==================================================================================================================*/
+
+.objective {
+    background-color: #61ceb0;
+    overflow: hidden;
+    position: relative;
+    &__item {
+        opacity: 0;
+        display: flex;
+        margin-bottom: 40px;
+        animation: appearance 0.5s linear forwards;
+    }
+    &__item:last-child {
+        margin-bottom: 0;
+    }
+    &__title {
+        font-size: 36px;
+        line-height: 36px;
+        font-weight: 700;
+        margin-right: 20px;
+    }
+    &__title:hover {
+        animation: shaking 0.3s linear;
+    }
+    &__text {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    &__text:hover {
+        animation: shaking 0.3s linear;
+    }
+}
+
+.bubbles {
+    position: absolute;
+    bottom: -20px;
+    right: calc((100vw - 1270px) / 2);
+    height: 10px;
+    background-color: whitesmoke;
+    width: 33%; 
+    &::before,
+    &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    }
+    &::before {
+    left: -20px;
+    border: 3px solid #ffffff;
+    animation: bubbles 7s linear infinite 3s;
+    width: 30px;
+    height: 30px;
+    }
+    &::after {
+    border: 2px solid #ffffff;
+    right: -20px;
+    width: 20px;
+    height: 20px;
+    animation: bubbles 5s linear infinite;
+    }
+    &__item {
+        position: absolute;
+        width: 10%;
+        height: 10px;
+        background-color: #000000;
+        bottom: 0;
+        right: 0;
+    }
+    &__item::before,
+    &__item::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        top: 0;
+    }
+    &__item::before {
+        border: 1px solid #ffffff;
+        width: 14px;
+        height: 14px;
+        animation: bubbles3 3s linear infinite 1s;
+        left: 10px;
+    }
+    &__item::after {
+        border: 1px solid #ffffff;
+        width: 24px;
+        height: 24px;
+        animation: bubbles2 5s linear infinite 4.5s;
+        left: -10px;
+    }
+    &__item:nth-child(2) {
+        right: 10%;
+    }
+    &__item:nth-child(2)::before{
+        border: 1px solid #ffffff;
+        width: 10px;
+        height: 10px;
+        left: -15px;
+        animation: bubbles3 3s linear infinite 2s;
+    }
+    &__item:nth-child(2)::after{
+        border: 2px solid #ffffff;
+        height: 20px;
+        width: 20px;
+        left: 15px;
+        animation: bubbles 5s linear infinite 1.5s;
+    }
+    &__item:nth-child(3) {
+        right: 20%;
+    }
+    &__item:nth-child(3)::before{
+        border: 3px solid #ffffff;
+        width: 33px;
+        height: 33px;
+        left: -20px;
+        animation: bubbles2 7s linear infinite 3s;
+    }
+    &__item:nth-child(3)::after{
+        border: 1px solid #ffffff;
+        height: 16px;
+        width: 16px;
+        left: 10px;
+        animation: bubbles3 3s linear infinite 1.2s;
+    }
+    &__item:nth-child(4) {
+        right: 30%;
+    }
+    &__item:nth-child(4)::before{
+        border: 2px solid #ffffff;
+        width: 22px;
+        height: 22px;
+        left: -15px;
+        animation: bubbles 5s linear infinite 3.2s;
+    }
+    &__item:nth-child(4)::after{
+        border: 1px solid #ffffff;
+        height: 12px;
+        width: 12px;
+        left: 20px;
+        animation: bubbles2 3s linear infinite ;
+    }
+    &__item:nth-child(5) {
+        right: 40%;
+    }
+    &__item:nth-child(5)::before{
+        border: 1px solid #ffffff;
+        width: 14px;
+        height: 14px;
+        left: 15px;
+        animation: bubbles3 3s linear infinite 1.7s;
+    }
+    &__item:nth-child(5)::after{
+        border: 2px solid #ffffff;
+        height: 26px;
+        width: 26px;
+        left: -15px;
+        animation: bubbles2 5s linear infinite ;
+    }
+    &__item:nth-child(6) {
+        right: 50%;
+    }
+    &__item:nth-child(6)::before{
+        border: 3px solid #ffffff;
+        width: 35px;
+        height: 35px;
+        left: -30px;
+        animation: bubbles 7s linear infinite 4s;
+    }
+    &__item:nth-child(6)::after{
+        border: 1px solid #ffffff;
+        height: 13px;
+        width: 13px;
+        left: 15px;
+        animation: bubbles3 3s linear infinite 2s;
+    }
+    &__item:nth-child(7) {
+        right: 60%;
+    }   
+    &__item:nth-child(7)::before{
+        border: 1px solid #ffffff;
+        width: 11px;
+        height: 11px;
+        left: -15px;
+        animation: bubbles2 3s linear infinite 3.3s;
+    }
+    &__item:nth-child(7)::after{
+        border: 2px solid #ffffff;
+        height: 21px;
+        width: 21px;
+        left: 15px;
+        animation: bubbles3 5s linear infinite 6s;
+    }
+    &__item:nth-child(8) {
+        right: 70%;
+    }
+    &__item:nth-child(8)::before{
+        border: 2px solid #ffffff;
+        width: 24px;
+        height: 24px;
+        left: 10px;
+        animation: bubbles 5s linear infinite 2s;
+    }
+    &__item:nth-child(8)::after{
+        border: 1px solid #ffffff;
+        height: 10px;
+        width: 10px;
+        left: -5px;
+        animation: bubbles2 3s linear infinite 4s;
+    }
+    &__item:nth-child(9) {
+        right: 80%;
+    }
+    &__item:nth-child(9)::before{
+        border: 3px solid #ffffff;
+        width: 31px;
+        height: 31px;
+        left: -15px;
+        animation: bubbles 7s linear infinite;
+    }
+    &__item:nth-child(9)::after{
+        border: 1px solid #ffffff;
+        height: 15px;
+        width: 15px;
+        left: -15px;
+        animation: bubbles3 3s linear infinite 1s;
+    }
+    &__item:nth-child(10) {
+        right: 90%;
+    }
+    &__item:nth-child(10)::before{
+        border: 2px solid #ffffff;
+        width: 24px;
+        height: 24px;
+        left: -22px;
+        animation: bubbles 5s linear infinite 4.5s;
+    }
+    &__item:nth-child(10)::after{
+        border: 1px solid #ffffff;
+        height: 17px;
+        width: 17px;
+        left: 17px;
+        animation: bubbles2 3s linear infinite 7s;
+    }
+}
+/*=================================================================================================================
+
+                                                            skills
+
+==================================================================================================================*/
+
+.skills {
+    background-color: #61ce80;
+    overflow: hidden;
+    &__block {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    &__technology {
+        width: 25%;
+        opacity: 0;
+    }
+    &__technology:nth-child(3) {
+        animation: departure-left 0.8s linear forwards;
+    }
+    &__technology:nth-child(1) {
+        animation: departure-up 0.8s linear forwards;
+    }
+    &__technology:nth-child(2) {
+        animation: departure-down 0.8s linear forwards;
+    }
+    &__technology:nth-child(4) {
+        animation: departure-right 0.8s linear forwards;
+    }
+    &__technology:hover &__image-block {
+        animation: turn 1s linear forwards;
+    }
+    &__image-block {
+    width: 310px;
+    padding: 20px;
+    transition: .3s;
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__image.padding {
+        padding: 0 38.5px;
+    }
+    &__text {
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+/*=================================================================================================================
+
+                                                            education
+
+==================================================================================================================*/
+.education {
+    background-color: #a6ce61;
+    &__item {
+        margin-bottom: 60px;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+    }
+    &__item:last-child {
+        margin-bottom: 0;
+    }
+    &__item:nth-child(1) {
+        animation: departure-up 0.9s linear forwards;
+    }
+    &__item:nth-child(2) {
+        animation: departure-left 0.9s linear forwards;
+    }
+    &__item:nth-child(3) {
+        animation: departure-down 0.9s linear forwards;
+    }
+    &__title {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 36px;
+        margin-right: 20px;
+    }
+    &__text {
+        font-size: 30px;
+    }
+    &__title {
+        animation: shaking 0.3s linear;
+    }
+}
+
+/*=================================================================================================================
+
+                                                            portfolio
+
+==================================================================================================================*/
+
+.portfolio {
+    background-color: #cdce61;
+    &__block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &__item {
+        width: 25%;
+        height: (1270px * 0.25);
+        background-color: #72746f;
+        padding: 10px;
+        margin: 10px 10px ;
+        border-radius: 15px;
+        position: relative;
+        opacity: 0;
+        animation: opacity 1s linear forwards;
+    }
+    &__item::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 15px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: inset 0 0 30px #000000, 0 0 20px #000000;
+    }
+    &__item:hover::after {
+        animation: raise-the-shield 0.2s linear forwards;
+    }
+    &__item:nth-child(1)::after {
+        background-image: url(../images/bioboid.jpg);
+    }
+    &__item:nth-child(2)::after {
+        background-image: url(../images/creative-agency.jpg);
+    }
+    &__item:nth-child(3)::after {
+        background-image: url(../images/creatives.jpg);
+    }
+    &__item:nth-child(4)::after {
+        background-image: url(../images/to2rent.jpg);
+    }
+    &__item:nth-child(5)::after {
+        background-image: url(../images/vebinar.jpg);
+    }
+    &__link {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        font-size: 26px;
+    }
+    &__link:hover {
+        text-decoration: underline;
+    }
+    &__link-position-left {
+        transform: translateX(-100%);
+    }
+    &__link-position-right {
+        transform: translateX(50%);
+    }
+}
+
+@import "media"; //подключаем аддаптив

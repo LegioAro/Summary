@@ -1,0 +1,274 @@
+//увеличение
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+//нажатие 
+@keyframes scale-btn {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+//выдвижение слева
+@keyframes departure-left {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+//выдвижение справа
+@keyframes departure-right {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes departure-up {
+    0% {
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes departure-down {
+    0% {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+//зациклнное выдвижение
+@keyframes departure-cycle {
+    0% {
+        transform: perspective(1000px) rotate3d(70deg 0 0) ;
+    }
+    100% {
+        transform: perspective(1000px) rotate3d(70deg 0 360deg);
+    }
+}
+
+//тряска 
+@keyframes shaking {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    75% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+//прокрутка
+@keyframes scrolling {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+//появление 
+@keyframes appearance {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+//поворот 
+@keyframes turn {
+    0% {
+        transform: rotateY(0) scale(1) perspective(0);
+    }
+    50% {
+        transform: rotateY(180deg) scale(1.2) perspective(500px);
+    }
+    100% {
+        transform: rotateY(360deg) scale(1) perspective(0);
+    }
+}
+
+//поднять щиt
+@keyframes raise-the-shield {
+    0% {
+        transform: translateY(0);
+        transform-origin: left;
+    }
+    100% {
+        transform: translateY(-60px);
+        transform-origin: left;
+    }
+}
+
+//opacity
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+//bubble 
+@keyframes bubbles {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    10% {
+        transform: translateY(-10vh) translateX(-30px);
+    }
+    20%{
+        transform: translateY(-20vh) translateX(-10px);
+    }
+    30% {
+        transform: translateY(-30vh) translateX(0px);
+    }
+    40% {
+        transform: translateY(-40vh) translateX(15px);
+    }
+    50% {
+        transform: translateY(-50vh) translateX(30px);
+    }
+    60% {
+        transform: translateY(-60vh) translateX(20px);
+    }
+    70% {
+        transform: translateY(-70vh) translateX(10px);
+    }
+    80% {
+        transform: translateY(-80vh) translateX(0px);
+    }
+    90% {
+        transform: translateY(-90vh) translateX(-10px);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(0);
+    }
+}
+
+@keyframes bubbles2 {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    10% {
+        transform: translateY(-10vh) translateX(-5px);
+    }
+    20%{
+        transform: translateY(-20vh) translateX(-10px);
+    }
+    30% {
+        transform: translateY(-30vh) translateX(-3px);
+    }
+    40% {
+        transform: translateY(-40vh) translateX(0px);
+    }
+    50% {
+        transform: translateY(-50vh) translateX(15px);
+    }
+    60% {
+        transform: translateY(-60vh) translateX(10px);
+    }
+    70% {
+        transform: translateY(-70vh) translateX(5px);
+    }
+    80% {
+        transform: translateY(-80vh) translateX(0px);
+    }
+    90% {
+        transform: translateY(-90vh) translateX(-10px);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(0);
+    }
+}
+
+@keyframes bubbles3 {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    10% {
+        transform: translateY(-10vh) translateX(7px);
+    }
+    20%{
+        transform: translateY(-20vh) translateX(15px);
+    }
+    30% {
+        transform: translateY(-30vh) translateX(10px);
+    }
+    40% {
+        transform: translateY(-40vh) translateX(0px);
+    }
+    50% {
+        transform: translateY(-50vh) translateX(-5px);
+    }
+    60% {
+        transform: translateY(-60vh) translateX(-10px);
+    }
+    70% {
+        transform: translateY(-70vh) translateX(-5px);
+    }
+    80% {
+        transform: translateY(-80vh) translateX(0px);
+    }
+    90% {
+        transform: translateY(-90vh) translateX(-4px);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(8px);
+    }
+}
